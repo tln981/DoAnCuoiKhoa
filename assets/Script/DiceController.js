@@ -10,7 +10,9 @@ cc.Class({
     onLoad() {
         cc.log(this._defaultMapDice)
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
-        this._mapDice=new MapDice([0,3,0],[5,1,2],[0,4,0]);
+        this._mapDice=new MapDice(  [0,3,0],
+                                    [5,1,2],
+                                    [0,4,0]);
         cc.log(this._mapDice)
     },
     start() {
