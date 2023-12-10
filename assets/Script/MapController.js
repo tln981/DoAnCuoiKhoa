@@ -13,10 +13,12 @@ cc.Class({
 
     },
     renderMap(dataMap,posX=0,posY=0){
-        
-        for(let row=0;row<dataMap.y;row++){
-            for(let col=0;col<dataMap.x;col++){
+       //cc.log(dataMap)
+        for(let row=0;row<dataMap.value.length;row++){
+            for(let col=0;col<dataMap.value[row].length;col++){
+
                 //cc.log(dataMap.value[row][col])
+                //cc.log(row+'----------'+col)
                 //xử lý thêm node
                 // cc.log(dataMap.value[col,row])
                 // cc.log(this.atlas.getSpriteFrames()[dataMap.value[col,row]])
@@ -26,7 +28,8 @@ cc.Class({
                 newBlock.width=dataMap.sizeX;
                 newBlock.height=dataMap.sizeY;
                 newBlock.x=dataMap.sizeX*col;
-                newBlock.y=dataMap.sizeY*(dataMap.y-row);
+                newBlock.y=dataMap.sizeY*(dataMap.value[row].length-row);
+                //cc.log(newBlock.x+'----'+newBlock.y)
             }
         }
     }
