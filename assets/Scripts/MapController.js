@@ -16,8 +16,10 @@ cc.Class({
         this.destroyChildrenNode();
         this.tiles = [];
         for (let row = 0; row < map.y; row++) {
+            this.tiles.push([])
             for (let col = 0; col < map.x; col++) {
                 let newTile = cc.instantiate(this.prefabs[0]);
+                this.tiles[row].push(newTile);
                 newTile.parent = this.node;
                 newTile.x = 100 * col;
                 newTile.y = 100 * (map.x - row);

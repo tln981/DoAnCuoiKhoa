@@ -13,6 +13,7 @@ class Map {
         value.forEach(element => {
             if (this.checkPosition(element[0], element[1])) {
                 wall.push(element);
+                
             } else {
                 return false;
             }
