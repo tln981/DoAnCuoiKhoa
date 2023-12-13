@@ -7,6 +7,7 @@ class Map {
         this.wallRight = [];
         this.wallTop = [];
         this.wallBottom = [];
+        this.destination=[]
     }
     setWall(value, key) {
         let wall = []
@@ -52,6 +53,13 @@ class Map {
         }
         else return false;
         return true;
+    }
+    setDestination(x,y){
+        if (this.checkPosition(x, y)) {
+            this.destination=[x,y];
+            return true
+        }
+        return false;
     }
     checkPosition(x, y) {
         if (x >= 0 && y >= 0) {
